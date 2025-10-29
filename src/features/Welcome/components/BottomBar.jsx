@@ -7,7 +7,7 @@ function BottomBar() {
 
   return (
     <div className="bottom-bar uk-flex uk-flex-between uk-flex-middle">
-      <div className="profile" />
+      <div className="bg-blue-300 rounded-full w-10 h-10" />
       <div className="nav">
         <div className="button">
           {Config.appName}

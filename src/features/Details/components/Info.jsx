@@ -1,6 +1,7 @@
 import './Info.sass';
 import { useGlobal } from 'reactn';
 import logo from '../../../assets/logo.png';
+import AS_logo from '../../../assets/AS_logo.png';
 import Config from '../../../config';
 
 function Info() {
@@ -10,7 +11,7 @@ function Info() {
     <div className="info">
       <div className="top">
         <div className="logo">
-          <img src={logo} alt="Picture" />
+          <img src={AS_logo} alt="Picture" />
         </div>
         <div className="text">
           Welcome to

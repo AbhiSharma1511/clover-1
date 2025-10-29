@@ -10,23 +10,32 @@ function Welcome() {
   const back = () => setOver(false);
 
   return (
-    <div className="content uk-flex uk-flex-column">
+    <div className="content flex flex-col min-h-screen text-white">
       <TopBar back={back} />
-      <div className="content uk-flex uk-flex-center uk-flex-middle uk-flex-column">
-        <div className="welcome uk-flex uk-flex-bottom">
-          {user.firstName}
-          {' '}
-          {user.lastName}
+
+      <div className="flex flex-col items-center justify-center flex-1 px-4 text-center">
+
+        <h1 className="welcome text-4xl font-bold tracking-wide drop-shadow-lg mb-4 animate-fadeIn">
+          Welcome Back,
+          <span className="text-[#4cc9f0] ml-2">
+            {user.lastName}
+          </span>
+        </h1>
+
+        <div className="profile mb-6">
+          <div className="transform hover:scale-105 transition duration-300 ease-out drop-shadow-2xl">
+            <Picture user={user} />
+          </div>
         </div>
-        <div className="profile">
-          <Picture user={user} />
-        </div>
-        <div className="tutorial uk-flex uk-flex-top uk-flex-column uk-flex-center uk-flex-middle">
+
+        <p className="tutorial text-lg text-gray-300 max-w-sm leading-relaxed animate-fadeSlideUp">
           Search for someone to start a conversation,
           <br />
           Add contacts to your favorites to reach them faster
-        </div>
+        </p>
+
       </div>
+
       <BottomBar />
     </div>
   );
