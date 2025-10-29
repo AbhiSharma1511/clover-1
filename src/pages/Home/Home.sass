@@ -1,0 +1,73 @@
+.app
+  width: 100%
+  height: 100%
+  display: flex
+
+.content
+  flex-grow: 1
+  overflow: hidden
+
+.main
+  flex-grow: 1
+  background: linear-gradient(135deg, #e3f2fd, #bbdefb) // Light Blue Theme
+  .content
+    flex-grow: 1
+    .profile
+      overflow: hidden
+      width: 150px
+      height: 150px
+      border-radius: 75px
+      .img
+        display: flex
+        width: 150px
+        height: 150px
+        border-radius: 75px
+        justify-content: center
+        align-items: center
+        background: #1e88e5 // Blue Avatar Background
+        color: #e3f2fd
+        font-size: 72px
+    .welcome, .tutorial
+      height: 75px
+      padding: 18px
+      text-align: center
+    .welcome
+      font-size: 30px
+      font-weight: bold
+      color: #0d47a1
+    .tutorial
+      font-size: 14px
+      color: #1565c0
+
+@keyframes navigate
+  from
+    left: 100%
+  to
+    left: 0
+
+@keyframes exit
+  from
+    left: 0
+  to
+    left: 100%
+
+@media screen and (max-width: 700px)
+  .main
+    display: none
+    position: absolute
+    width: 100%
+    height: 100%
+    top: 0
+    left: 0
+    z-index: 10
+  .main.over
+    display: flex
+    animation-name: navigate
+    animation-duration: 0.2s
+    animation-timing-function: linear
+  .main.exit
+    display: flex
+    left: 100%
+    animation-name: exit
+    animation-duration: 0.2s
+    animation-timing-function: linear
